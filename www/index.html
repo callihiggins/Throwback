@@ -1,0 +1,183 @@
+<html>
+    <head>
+        <title>Throwback</title>
+        <script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
+        <script type="text/javascript" charset="utf-8" src="DatePicker.js"></script>
+        <script type="text/javascript" charset="utf-8" src="json2.js"></script>
+        <script src="jquery-1.7.1.min.js"></script>
+        <script src="jquery.mobile-1.2.0/jquery.mobile-1.2.0-rc.1.min.js"></script>
+        <link rel="stylesheet" href="jquery.mobile-1.2.0/jquery.mobile-1.2.0-rc.1.css" />
+        <link rel="stylesheet" href="jquery.mobile-1.2.0/jquery.mobile.structure-1.2.0-rc.1.css" />
+        <link rel="stylesheet" href="jquery.mobile-1.2.0/jquery.mobile.structure-1.2.0-rc.1.min.css" />
+        <link rel="stylesheet" href="jquery.mobile-1.2.0/jquery.mobile.theme-1.2.0-rc.1.css" />
+        <link rel="stylesheet" href="jquery.mobile-1.2.0/jquery.mobile.theme-1.2.0-rc.1.min.css" />
+        
+        <!-- bin/jquery.slider.min.css -->
+        <link rel="stylesheet" href="js-slider/css/jslider.css" type="text/css">
+        <link rel="stylesheet" href="js-slider/css/jslider.blue.css" type="text/css">
+        <link rel="stylesheet" href="js-slider/css/jslider.plastic.css" type="text/css">
+        <link rel="stylesheet" href="js-slider/css/jslider.round.css" type="text/css">
+        <link rel="stylesheet" href="js-slider/css/jslider.round.plastic.css" type="text/css">
+        <!-- end -->
+            
+        <!-- bin/jquery.slider.min.js -->
+        <script type="text/javascript" src="js-slider/js/jshashtable-2.1_src.js"></script>
+        <script type="text/javascript" src="js-slider/js/jquery.numberformatter-1.2.3.js"></script>
+        <script type="text/javascript" src="js-slider/js/tmpl.js"></script>
+        <script type="text/javascript" src="js-slider/js/jquery.dependClass-0.1.js"></script>
+        <script type="text/javascript" src="js-slider/js/draggable-0.1.js"></script>
+        <script type="text/javascript" src="js-slider/js/jquery.slider.js"></script>
+        <!-- end -->
+
+
+                            
+        <script type="text/javascript" charset="utf-8" src="throwback.js"></script> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            
+        </head>
+    <body>
+ 
+        
+<!----------------------------------------------REGISTER-------------------------------------------------------->
+
+        <div data-role="page" id="register_entry">
+           <div data-role="header">
+                <h1>Throwback</h1>
+           </div><!-- /header -->
+           <div data-role="content">
+               <div data-role="fieldcontain" data-mini="true">
+                   <fieldset data-role="controlgroup" data-type="horizontal" >
+                       <input type="radio" name="signin" id="register" value="register"  data-inline="true"/>
+                       <label for="register">Register</label>
+                        <input type="radio" name="signin" id="login" value="login" data-inline="true" data-inline="true"/>
+                        <label for="login">Login</label>
+                   </fieldset>
+                </div><!--field contains-->
+               <div id="registerPage">
+                        <h5>Please register your email with Throwback </h5>
+                    <div data-role="fieldcontain">
+                        <input type="email" placeholder="Email" name="register_email" id="register_email" autocapitalize="off"  autocorrect="off" autocomplete="off" />
+                    </div> <!--field contains-->
+                    <div data-role="fieldcontain">
+                        <input type="password" placeholder="Create a Password" name="register_password" id="register_password" autocapitalize="off"  autocorrect="off" autocomplete="off"/>
+                    </div> <!--field contains-->
+                     <input type="button" class="show-page-loading-msg" onclick="registerEmail();" data-theme="a" value="Register"/>
+               </div><!--registerPage-->
+               <div id="loginPage">
+                  
+                       <div data-role="fieldcontain">
+                           <input type="email" placeholder="Email" name="login_email" id="login_email" autocapitalize="off" autocorrect="off" autocomplete="off" />
+                       </div> <!--field contains-->
+                       <div data-role="fieldcontain">
+                           <input type="password" placeholder="Enter Password" name="login_password" id="login_password" autocapitalize="off"  autocorrect="off" autocomplete="off" />
+                       </div> <!--field contains-->
+                       <input type="button" class="show-page-loading-msg" onclick="checkEmail();" data-theme="a" value="Login"/>
+                  
+                </div><!--registerPage-->
+               </div><!-- /content -->
+            <div data-role="footer" data-position="fixed" id="reset">
+                <a href="#reset" data-role="button">Reset my Password</a>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+        
+        
+<!----------------------------------------------RESET------------------------------------------------------->
+      
+        <div data-role="page" id="reset">
+           <div data-role="header">
+               <a href="#" data-rel="back" data-icon="back"data-iconpos="notext">Back</a>
+               <h1>Reset</h1>
+            </div><!-- /header -->
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <input type="email" placeholder="Email" name="reset_email" id="reset_email" autocapitalize="off" autocorrect="off" autocomplete="off" />
+                     <input type="submit" onclick="resetPasswrod()" value="Reset Password"/>
+                </div> <!--field contains-->
+            </div><!-- /content -->
+        </div><!-- /page -->
+        
+        
+<!---------------------------------------------------------------------------------------------->
+       
+
+        
+<!----------------------------------------------HOME--------------------------------------------------------------->
+        
+        <div data-role="page" id="home">
+            <div data-role="header">
+                <h1>Throwback</h1>
+            </div><!-- /header -->
+            <div data-role="content">
+                <a href="#" onclick="cameraButton();" data-role="button">Capture Photo</a>
+                <a href="#" onclick="albumButton();" data-role="button">Choose from album</a>
+            </div><!-- /content -->
+            <div data-role="footer" data-position="fixed">
+                <div data-role="button" onclick="logOut();">Log out</div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+  
+        
+        <div data-role="page" id="displayimage">
+           <div data-role="header" style="padding:0px;" />
+                <a href="#" onclick="cancel();" data-role="button" data-icon="delete" data-iconpos="notext"></a>
+           </div><!-- /header -->
+       <div data-role="content">
+          <img style="position: absolute; display:none; text-align:center; height:100%; opacity:0.2;  top:0; bottom:0; left:0; right:0;" id="largeImage" src="" alt="background"/>
+            <form id="submitForm">
+                 <div data-role="fieldcontain" data-mini="true">
+                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                         <table style="width:100% ">
+                             <tr>
+                                 <td style="width: 30%">
+                                    <h6> <legend >Return Date</legend> </h6>
+                                 </td>
+                                 <td style="width: 70%">
+                                     <input type="radio" name="return" id="choose" value="choose" data-inline="true"/>
+                                     <label for="choose">Choose</label>
+                                     <input type="radio" name="return" id="random" value="random" checked="checked" class="ui-btn-active" data-inline="true" />
+                                     <label for="random">Random</label>
+                                 </td>
+                             </tr>
+                         </table>
+                     </fieldset>
+                     <div id="selectrandom">
+                         <input id="rangeslider" type="slider" name="rangslider" value="1;60" />
+                    </div>
+                 <h6><span id="date" class="clearit"></span> </h6>
+                 </div> <!-- field contain--->
+                 <div data-role="fieldcontain" id="caption">
+                        <input type="text" placeholder="Add a message"  class="clearit" name="message" id="message" autocapitalize="on" autocorrect="on" autocomplete="on" />
+                 </div> <!-- field contain--->
+                <div data-role="fieldcontain" id="selectTags">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <table style="width:100% ">
+                            <tr>
+                                <td style="width: 50%">
+                                    <legend >Throw it to: </legend>
+                                </td>
+                                <td style="width: 50%">
+                                    <input type="radio" name="tagchoice" id="me" value="me" checked="checked" data-inline="true"/>
+                                    <label for="me">Me</label>
+                                    <input type="radio" name="tagchoice" id="us" value="us" data-inline="true" />
+                                    <label for="us">Us</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <div id="tags">
+                        <table style="width:100% ">
+                            <tr>
+                                <td style="width: 20%"><label for="name">Tags: </label></td>
+                            <td style="width: 80%"> <input type="input" placeholder="Seperate emails by comma" data-mini="true" class="clearit" data-inline="true" name="tag_email" id="tag_email" autocapitalize="off"  autocorrect="off" autocomplete="off" /></td>
+                        </tr>
+                    </table>
+                  </div><!-- tags div--->
+                </div> <!-- field contain--->
+            <input type="button" class="show-page-loading-msg" value="Throw It" onclick="getFormValues();"/>
+            </form>
+            </div><!-- /content -->
+        </div><!-- /page -->
+        
+        
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "io.cordova.hello-cordova"
+        version   = "2.0.0">
+    <name>Hello Cordova</name>
+
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+
+    <author href="http://cordova.io" email="callback-dev@incubator.apache.org">
+        Apache Cordova Team
+    </author>
+
+    <icon src="icon/icon@2x.png"        width="117" height="117" />
+    <gap:plugin name="DatePicker" /> <!-- latest release -->
+
+    <gap:splash src="splash/Default.png" width="640" height="960" />
+    <gap:splash src="splash/Default@2x~iphone.png" width="640" height="960"/>
+    <gap:splash src="splash/Default-Portrait.png" width="640" height="960" />
+
+    <feature name="http://api.phonegap.com/1.0/device" />
+   
+    <preference name="phonegap-version" value="1.9.0" />
+    <preference name="orientation"      value="default" />
+    <preference name="target-device"    value="universal" />
+    <preference name="fullscreen"       value="false" />
+</widget>
