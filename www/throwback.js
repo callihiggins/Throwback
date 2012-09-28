@@ -32,6 +32,8 @@ function onDeviceReady(){
     $.mobile.pushStateEnabled = false;
     $.mobile.buttonMarkup.hoverDelay = 0;
     
+
+    
  //   $('#registerForm').submit(registerEmail);
 //    $('#loginForm').submit(checkEmail);
  //   $('#resetForm').submit(resetPassword);
@@ -39,17 +41,19 @@ function onDeviceReady(){
     $('#tags').hide();
     $('#loginPage').hide();
     $('#reset').hide();
+    $("#selectrandom").hide();
     
     $("#rangeslider").slider({
                              from: 1, to: 60,
                              heterogeneity: ['50/12'],
                              scale: ['1 month', '|', '|', '|', '6 months', '|', '|', '|', '1 year', '|', '|', '|', '3 years', '|', '|', '|', '5 years'],
                              dimension: '&nbsp;$' ,
+                             skin:"blue",
                              onstatechange: function( value ){
                                                         
                              var min = value.split(";")[0];
                              var max = value.split(";")[1];
-                             
+                             console.log(min);
                              localStorage.min = min;
                              localStorage.max = max;
 
@@ -85,6 +89,13 @@ function onDeviceReady(){
                                   random = true;
                                   $("#selectrandom").show();
                                   $('#date').hide();
+                                  }
+                                  else if (checkedBox == "surprise"){
+                                  random = true;
+                                  $("#selectrandom").hide();
+                                  $('#date').hide();
+                                  localStorage.min = 1;
+                                  localStorage.max = 60;
                                   }
                            }
                                   else if (this.name == "signin") {
@@ -187,6 +198,10 @@ function logOut(){
     $.mobile.changePage($('#register_entry'));
     $('#registerPage').hide();
     $('#loginPage').show();
+     $('#reset').show();
+    $("#register").attr("checked",false).checkboxradio("refresh");
+    $("#login").attr("checked",true).checkboxradio("refresh");
+
 }
 
 function cameraButton(){
@@ -237,17 +252,17 @@ function captureSuccess(imageURI) {
     filename =  imageURI.substr(imageURI.lastIndexOf('/')+1);
     theImage = imageURI;
 
-    var largeImage = document.getElementById('largeImage');
+   /* var largeImage = document.getElementById('largeImage');
     largeImage.style.display = 'block';
     largeImage.src = imageURI+ "?" + (new Date()).getTime();
-    $.mobile.changePage($("#displayimage"));
+    $.mobile.changePage($("#displayimage"));*/
     }
 
 // Upload files to server
 
 function getFormValues(){
 
-    $.mobile.showPageLoadingMsg("b","Uploading");
+    $.mobile.showPageLoadingMsg("a","Uploading");
     localStorage.tags = $('#tag_email').val();
     localStorage.caption = $('#message').val()
     if (random == true){
@@ -367,8 +382,6 @@ function cancel(){
 function onConfirm(buttonIndex){
     if (buttonIndex == 2){
         navigator.camera.cleanup( cameraSuccess, cameraError );
-        var largeImage = document.getElementById('largeImage');
-        largeImage.src = "";
         $.mobile.changePage($('#home'));
     }
 }

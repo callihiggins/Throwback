@@ -8,7 +8,7 @@
         <script src="jquery.mobile-1.2.0/jquery.mobile-1.2.0-rc.1.min.js"></script>
         <link rel="stylesheet" href="jquery.mobile-1.2.0/jquery.mobile-1.2.0-rc.1.css" />
         <link rel="stylesheet" href="jquery.mobile-1.2.0/jquery.mobile.structure-1.2.0-rc.1.css" />
-      <!--   <link rel="stylesheet" href="jquery.mobile-1.2.0/jquery.mobile.structure-1.2.0-rc.1.min.css" /> -->
+         <link rel="stylesheet" href="jquery.mobile-1.2.0/jquery.mobile.structure-1.2.0-rc.1.min.css" /> 
       <!--  <link rel="stylesheet" href="jquery.mobile-1.2.0/jquery.mobile.theme-1.2.0-rc.1.css" />
         <link rel="stylesheet" href="jquery.mobile-1.2.0/jquery.mobile.theme-1.2.0-rc.1.min.css" />-->
         
@@ -54,7 +54,6 @@
                 .ui-content{
                     background: transparent;
                 }
- 
                 .ui-radio .ui-btn {
                     font-family: "Thirsty Script";
                     color: rgb(24,49,89);
@@ -79,24 +78,59 @@
                 .ui-radio:nth-child(2) {
                     right:10px;
                 }
+                .ui-radio:nth-child(3) {
+                    right:20px;
+                }
+
+                
+                
+                
+                .ui-mini .ui-radio .ui-btn {
+                    font-family: "Thirsty Script";
+                    color: rgb(24,49,89);
+                    font-weight:normal;
+                    width: 90px;
+                    height: 35px;
+                    border: none;
+                    background: url('jquery.mobile-1.2.0/images/miniradio_off.png'); no-repeat rgba(0, 0, 0, 0.4) ;
+                }
+                .ui-mini .ui-radio .ui-btn  .ui-btn-inner{
+                    padding-top: .4em;
+                    font-size: 20px;
+                }
+              .ui-mini .ui-radio .ui-radio-on {
+                    font-family: "Thirsty Script";
+                    color: rgb(255,255,255);
+                    font-weight:bold;
+                    background: url('jquery.mobile-1.2.0/images/miniradio_on.png'); no-repeat rgba(0, 0, 0, 0.4) ;
+                    
+                }
+                .ui-mini .ui-radio:nth-child(2) {
+                    right:10px;
+                }
+
+                
                 
                 .ui-overlay-c{
                     color: none; !important
                 }
-                .ui-btn-up-b{
+               .ui-btn-up-g, .ui-btn-up-b{
                     font-family: "Thirsty Script"; !important
                     font-size: 20px;
                 }
-                 .ui-btn-up-b .ui-btn-text{
+                 .ui-btn-up-g .ui-btn-up-g, .ui-btn-up-b .ui-btn-text{
                      font-size: 20px;
                  }
                 
-                .ui-btn-down-b{
+               .ui-btn-down-g, .ui-btn-down-b{
                     font-family: "Thirsty Script"; !important
                     font-size: 20px;
                     
                 }
-               .ui-btn-down-b .ui-btn-text{
+            .ui-btn-text, .ui-btn-down-b .ui-btn-text{
+                    font-size: 20px;
+                }
+                .ui-btn-text, .ui-btn-down-g .ui-btn-text{
                     font-size: 20px;
                 }
 
@@ -126,11 +160,9 @@
                     font-family: "Thirsty Script"; !important
                     font-size: 20px;
                 }
-                .ui-btn-up-d .ui-btn-text{
-                    font-size: 20px;
-                }
+                               
                 
-                .ui-btn-down-d{
+                 .ui-btn-down-d{
                     font-family: "Thirsty Script"; !important
                     font-size: 20px;
                     
@@ -166,13 +198,45 @@
                     font-size: 14px;
                     font-style: normal;
                 }
-
-              
-                               
-                .ui-icon-myBack {
-                    background-image: url('jquery.mobile-1.2.0/images/arrow.png');
+                
+                ui-btn-up-g{
+                    font-family: "Thirsty Script"; !important
+                    font-size: 20px;
+                    text-align: center:
                 }
-              
+                .ui-btn-up-g .ui-btn-text{
+                    font-size: 20px;
+                    color: rgb(24,49,89);
+                    text-align: center:
+                }
+                
+                .ui-btn-down-g{
+                    font-family: "Thirsty Script"; !important
+                    font-size: 20px;
+                    text-align: center:
+                }
+                .ui-btn-down-g .ui-btn-text{
+                    font-size: 20px;
+                    color:white;
+                    text-align: center: !important
+                }
+                
+                .topHomeButton{
+                    margin-top: 33%; !important
+  
+                    
+                }
+                
+                .theDate {
+                    background: (255,255,255,.5);
+                    border: 1px;
+                    border-color: rgba(24,49,89);
+                }
+                
+                .bottomHomeButton{
+                    margin-top: 25%; !important
+                    
+                }
                 
                 input::-webkit-input-placeholder {
                     color:    rgba(24,49,89,.6);
@@ -189,6 +253,16 @@
                     font-family: "Thirsty Script"; !important
                     font-size: 30px;
                     
+                }
+                h3{
+                    text-align: center;
+                    font-family: "Thirsty Script"; !important
+                    font-size: 40px;
+                }
+                h4{
+                    text-align: center;
+                    font-family: "Thirsty Script"; !important
+                    font-size: 25px;
                 }
                 
                
@@ -224,10 +298,10 @@
                <div id="loginPage">
                   
                        <div data-role="fieldcontain">
-                           <input type="email" placeholder="Email" name="login_email" id="login_email" autocapitalize="off" autocorrect="off" autocomplete="off" />
+                           <input type="email" placeholder="EMAIL" name="login_email" id="login_email" autocapitalize="off" autocorrect="off" autocomplete="off" />
                        </div> <!--field contains-->
                        <div data-role="fieldcontain">
-                           <input type="password" placeholder="Enter Password" name="login_password" id="login_password" autocapitalize="off"  autocorrect="off" autocomplete="off" />
+                           <input type="password" placeholder="ENTER PASSWORD" name="login_password" id="login_password" autocapitalize="off"  autocorrect="off" autocomplete="off" />
                        </div> <!--field contains-->
                        <input type="button" class="show-page-loading-msg" onclick="checkEmail();" data-theme="b" value="Login"/>
                   
@@ -263,58 +337,50 @@
 <!----------------------------------------------HOME--------------------------------------------------------------->
         
         <div data-role="page" id="home">
-            <div data-role="header">
-                <h1>Throwback</h1>
-            </div><!-- /header -->
-            <div data-role="content">
-                <a href="#" onclick="cameraButton();" data-role="button">Capture Photo</a>
-                <a href="#" onclick="albumButton();" data-role="button">Choose from album</a>
+                <div data-role="content">
+  
+                <a href="#" onclick="cameraButton();" class="topHomeButton" data-role="button" data-theme="b">Capture Now</a> 
+
+                <a href="#" onclick="albumButton();" class="bottomHomeButton" data-role="button" data-theme="g">Grab the past</a>
             </div><!-- /content -->
-            <div data-role="footer" data-position="fixed">
-                <div data-role="button" onclick="logOut();">Log out</div>
+            <div data-role="footer" data-position="fixed" data-theme="c">
+                <div data-role="button" onclick="logOut();" data-theme="c">Log out</div>
             </div><!-- /footer -->
         </div><!-- /page -->
   
         
         <div data-role="page" id="displayimage">
            <div data-role="header" style="padding:0px;" data-theme="f" />
-               <input type="button" onclick="cancel();" data-role="button" data-icon="delete" data-iconpos="no-text" class="ui-btn-right"/>
+                <a href="#" onclick="cancel();" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
            </div><!-- /header -->
        <div data-role="content">
-          <img style="position: absolute; display:none; text-align:center; height:100%; opacity:0.2;  top:0; bottom:0; left:0; right:0;" id="largeImage" src="" alt="background"/>
-            <form id="submitForm">
+          <br><br>
+                      <form id="submitForm">
                  <div data-role="fieldcontain" data-mini="true">
                      <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                          <table style="width:100% ">
-                             <tr>
-                                 <td style="width: 30%">
-                                    <h6> <legend >Return Date</legend> </h6>
-                                 </td>
-                                 <td style="width: 70%">
-                                     <input type="radio" name="return" id="choose" value="choose" data-inline="true"/>
+                                      <input type="radio" name="return" id="choose" value="choose" data-inline="true" />
                                      <label for="choose">Choose</label>
-                                     <input type="radio" name="return" id="random" value="random" checked="checked" class="ui-btn-active" data-inline="true" />
-                                     <label for="random">Random</label>
-                                 </td>
+                                    <input type="radio" name="return" id="range" value="random" data-inline="true" />
+                                    <label for="range">Range</label>
+                                     <input type="radio" name="return" id="random" value="surprise" checked="checked" class="ui-btn-active" data-inline="true" />
+                                     <label for="random">Surprise</label>
                              </tr>
                          </table>
                      </fieldset>
                      <div id="selectrandom">
                          <input id="rangeslider" type="slider" name="rangslider" value="1;60" />
                     </div>
-                 <h6><span id="date" class="clearit"></span> </h6>
-                 </div> <!-- field contain--->
-                 <div data-role="fieldcontain" id="caption">
-                        <input type="text" placeholder="Add a message"  class="clearit" name="message" id="message" autocapitalize="on" autocorrect="on" autocomplete="on" />
-                 </div> <!-- field contain--->
-                <div data-role="fieldcontain" id="selectTags">
+                 <h4><span id="date" class="clearit"></span></h4>
+                     </div> <!-- field contain--->
+                 <div data-role="fieldcontain" id="selectTags">
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <table style="width:100% ">
                             <tr>
-                                <td style="width: 50%">
-                                    <legend >Throw it to: </legend>
+                                <td style="width: 30%">
+                                    <legend ><h5>Throw to:</h5> </legend>
                                 </td>
-                                <td style="width: 50%">
+                                <td style="width: 70%">
                                     <input type="radio" name="tagchoice" id="me" value="me" checked="checked" data-inline="true"/>
                                     <label for="me">Me</label>
                                     <input type="radio" name="tagchoice" id="us" value="us" data-inline="true" />
@@ -326,13 +392,16 @@
                     <div id="tags">
                         <table style="width:100% ">
                             <tr>
-                                <td style="width: 20%"><label for="name">Tags: </label></td>
-                            <td style="width: 80%"> <input type="input" placeholder="Seperate emails by comma" data-mini="true" class="clearit" data-inline="true" name="tag_email" id="tag_email" autocapitalize="off"  autocorrect="off" autocomplete="off" /></td>
+                                <td style="width: 20%"><label for="name"><h5>Tags: </h5></label></td>
+                            <td style="width: 80%"> <input type="text" placeholder="Seperate emails by comma" data-mini="true" class="clearit" data-inline="true" name="tag_email" id="tag_email" autocapitalize="off"  autocorrect="off" autocomplete="off" /></td>
                         </tr>
                     </table>
                   </div><!-- tags div--->
                 </div> <!-- field contain--->
-            <input type="button" class="show-page-loading-msg" value="Throw It" onclick="getFormValues();"/>
+                <div data-role="fieldcontain" id="caption">
+                    <input type="text" placeholder="Add a message"  class="clearit" name="message" id="message" autocapitalize="on" autocorrect="on" autocomplete="on" />
+                </div> <!-- field contain--->
+                <input type="button" class="show-page-loading-msg" data-theme="b" value="Throw It Back" onclick="getFormValues();"/>
             </form>
             </div><!-- /content -->
         </div><!-- /page -->
