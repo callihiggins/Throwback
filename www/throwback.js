@@ -16,6 +16,8 @@ function preventBehavior(e)
 
 function onDeviceReady(){
     console.log("javascript works");
+   
+
     
     if (localStorage.confirmed == "true"){
         $.mobile.changePage($('#displayimage'));
@@ -28,7 +30,7 @@ function onDeviceReady(){
     $.mobile.allowCrossDomainPages = true;
     $.support.cors = true;
     $.mobile.pushStateEnabled = false;
-  //  $.mobile.buttonMarkup.hoverDelay = 50;
+    $.mobile.buttonMarkup.hoverDelay = 0;
     
  //   $('#registerForm').submit(registerEmail);
 //    $('#loginForm').submit(checkEmail);
@@ -36,6 +38,7 @@ function onDeviceReady(){
     //$('#submitForm').submit(getFormValues);
     $('#tags').hide();
     $('#loginPage').hide();
+    $('#reset').hide();
     
     $("#rangeslider").slider({
                              from: 1, to: 60,
@@ -85,14 +88,15 @@ function onDeviceReady(){
                                   }
                            }
                                   else if (this.name == "signin") {
-                                    var checkedBox = $("input:radio[name=signin]:checked").val();
+                                 var checkedBox = $("input:radio[name=signin]:checked").val();
                                     console.log(checkedBox);
                                     if(checkedBox == "login"){
                                     $('#registerPage').hide();
                                     $('#loginPage').show();
                                     $('#reset').show();
-                                  }
+                                }
                                   else if(checkedBox == "register"){
+                                 console.log(checkedBox);
                                     $('#registerPage').show();
                                     $('#loginPage').hide();
                                     $('#reset').hide();
@@ -148,6 +152,7 @@ function checkEmail() {
            console.log(localStorage.confirmed);
           
            } else {
+            $.mobile.hidePageLoadingMsg();
            console.log(data);
            navigator.notification.alert(data, null, "Throwback");
            }
