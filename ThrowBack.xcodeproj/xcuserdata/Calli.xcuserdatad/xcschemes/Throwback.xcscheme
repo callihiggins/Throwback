@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
                BuildableName = "Throwback.app"
-               BlueprintName = "Throwback"
-               ReferencedContainer = "container:Throwback.xcodeproj">
+               BlueprintName = "ThrowBack.xcodeproj"
+               ReferencedContainer = "container:ThrowBack.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
             BuildableName = "Throwback.app"
-            BlueprintName = "Throwback"
-            ReferencedContainer = "container:Throwback.xcodeproj">
+            BlueprintName = "ThrowBack.xcodeproj"
+            ReferencedContainer = "container:ThrowBack.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -47,15 +47,14 @@
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
-      enableOpenGLFrameCaptureMode = "0"
       allowLocationSimulation = "YES">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
             BuildableName = "Throwback.app"
-            BlueprintName = "Throwback"
-            ReferencedContainer = "container:Throwback.xcodeproj">
+            BlueprintName = "ThrowBack.xcodeproj"
+            ReferencedContainer = "container:ThrowBack.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -72,8 +71,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
             BuildableName = "Throwback.app"
-            BlueprintName = "Throwback"
-            ReferencedContainer = "container:Throwback.xcodeproj">
+            BlueprintName = "ThrowBack.xcodeproj"
+            ReferencedContainer = "container:ThrowBack.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

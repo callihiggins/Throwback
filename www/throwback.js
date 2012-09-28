@@ -15,14 +15,21 @@ function preventBehavior(e)
 
 
 function onDeviceReady(){
+    setTimeout(function() {
+               navigator.splashscreen.hide();
+               }, 7000);
+    
+    $('#loginPage').hide();
+    $('#reset').hide();
+    
     console.log("javascript works");
    
 
     
     if (localStorage.confirmed == "true"){
-        $.mobile.changePage($('#displayimage'));
+        $.mobile.changePage($('#home'));
     } else {
-        $.mobile.changePage($('#displayimage'));
+        $.mobile.changePage($('#register_entry'));
     }
     
     
@@ -39,8 +46,7 @@ function onDeviceReady(){
  //   $('#resetForm').submit(resetPassword);
     //$('#submitForm').submit(getFormValues);
     $('#tags').hide();
-    $('#loginPage').hide();
-    $('#reset').hide();
+
     $("#selectrandom").hide();
     
     $("#rangeslider").slider({
@@ -158,7 +164,7 @@ function checkEmail() {
            if(data == "Logging in")
            {
            $.mobile.hidePageLoadingMsg();
-           $.mobile.changePage($('#displayimage'));
+           $.mobile.changePage($('#home'));
            localStorage.confirmed = "true";
            console.log(localStorage.confirmed);
           
@@ -251,11 +257,12 @@ function captureSuccess(imageURI) {
     console.log(imageURI);
     filename =  imageURI.substr(imageURI.lastIndexOf('/')+1);
     theImage = imageURI;
+      $.mobile.changePage($("#displayimage"));
 
    /* var largeImage = document.getElementById('largeImage');
     largeImage.style.display = 'block';
     largeImage.src = imageURI+ "?" + (new Date()).getTime();
-    $.mobile.changePage($("#displayimage"));*/
+  */
     }
 
 // Upload files to server

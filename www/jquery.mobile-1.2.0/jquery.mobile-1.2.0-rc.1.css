@@ -38,32 +38,34 @@
 .ui-bar-a .ui-link-inherit {
 	color: #fff /*{a-bar-color}*/;
 }
+
 .ui-bar-a a.ui-link {
 	color: #7cc4e7 /*{a-bar-link-color}*/;
 	font-weight: bold;
 }
+
 .ui-bar-a a.ui-link:visited {
     color: #2489ce /*{a-bar-link-visited}*/;
 }
+
 .ui-bar-a a.ui-link:hover {
 	color: #2489ce /*{a-bar-link-hover}*/;
 }
+
 .ui-bar-a a.ui-link:active {
 	color: #2489ce /*{a-bar-link-active}*/;
 }
+
 .ui-body-a,
 .ui-overlay-a {
-    border: 1px solid #444 /*{a-body-border}*/;
-	font-weight: normal;
-    color: rgb(24,49,89);
-    
+    opacity: .1;
+	border: 1px solid 		#444 /*{a-body-border}*/;
+	color: 			rgba(24,49,89,125); /*{a-body-background-color}*/;
+    background:				rgba(255,255,255,10);
+    font-weight: normal;
 	}
 .ui-overlay-a {
-	background-image: url('images/bg.png');
-    background-repeat:repeat-y;
-    background-position:center center;
-    background-attachment:scroll;
-    background-size:100% 100%;
+	background-image: none;
 	border-width: 0;
 }
 .ui-body-a,
@@ -76,19 +78,24 @@
 .ui-body-a .ui-link-inherit {
 	color: 	#fff /*{a-body-color}*/;
 }
+
 .ui-body-a .ui-link {
 	color: #2489ce /*{a-body-link-color}*/;
 	font-weight: bold;
 }
+
 .ui-body-a .ui-link:visited {
     color: #2489ce /*{a-body-link-visited}*/;
 }
+
 .ui-body-a .ui-link:hover {
 	color: #2489ce /*{a-body-link-hover}*/;
 }
+
 .ui-body-a .ui-link:active {
 	color: #2489ce /*{a-body-link-active}*/;
 }
+
 .ui-btn-up-a {
 	border: 1px solid 		#111 /*{a-bup-border}*/;
 	background: 			#333 /*{a-bup-background-color}*/;
@@ -147,8 +154,7 @@
 .ui-btn-down-a {
 	font-family: Helvetica, Arial, sans-serif /*{global-font-family}*/;
 	text-decoration: none;
-}
-/* B RADIO BUTTONS
+}/* B RADIO BUTTONS
 -----------------------------------------------------------------------------------------------------------*/
 .ui-bar-b {
 	border: 1px solid 		#456f9a /*{b-bar-border}*/;
@@ -412,6 +418,7 @@
     text-align: center;
 	width: 225px;
     height: 38px;
+    left: 30px;
     border: none;
     color: white;
     background: url('images/reset.png'); no-repeat;
@@ -430,6 +437,7 @@
 	
 }
 .ui-btn-hover-d {
+    left: 30px;
     text-align: center;
 	width: 225px;
     height: 38px;
@@ -444,6 +452,7 @@
 	
 }
 .ui-btn-down-d {
+    left: 30px;
     text-align: center;
 	width: 225px;
     height: 38px;
@@ -981,6 +990,13 @@ only screen and (min-resolution: 240dpi) {
 .ui-icon-radio-on {
 	background-position: 	-720px 50%;
 }
+
+/* loading icon */
+.ui-icon-loading {
+	background: url(images/ajax-loader.gif);
+	background-size: 46px 46px;
+}
+
 /* Button corner classes
 -----------------------------------------------------------------------------------------------------------*/
 .ui-btn-corner-tl {
@@ -1154,11 +1170,11 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 /* loading screen */
 .ui-loading .ui-loader { display: block; }
 .ui-loader { display: none; z-index: 9999999; position: fixed; top: 50%; left: 50%; border:0; }
-.ui-loader-default { background: none; filter: Alpha(Opacity=18); opacity: .18; width: 46px; height: 46px; margin-left: -23px; margin-top: -23px; }
+.ui-loader-default { filter: Alpha(Opacity=18); opacity: .18; width: 46px; height: 46px; margin-left: -23px; margin-top: -23px; }
 .ui-loader-verbose { width: 200px; filter: Alpha(Opacity=88); opacity: .88; box-shadow: 0 1px 1px -1px #fff; height: auto; margin-left: -110px; margin-top: -43px; padding: 10px; }
 .ui-loader-default h1 { font-size: 0; width: 0; height: 0; overflow: hidden; }
 .ui-loader-verbose h1 { font-size: 16px; margin: 0; text-align: center; }
-.ui-loader .ui-icon { background-color: #000; display: block; margin: 0; width: 44px; height: 44px; padding: 1px; -webkit-border-radius: 36px; -moz-border-radius: 36px; border-radius: 36px; }
+.ui-loader .ui-icon { background-color: #FFF; display: block; margin: 0; width: 44px; height: 44px; padding: 1px; -webkit-border-radius: 36px; -moz-border-radius: 36px; border-radius: 36px; }
 .ui-loader-verbose .ui-icon { margin: 0 auto 10px; filter: Alpha(Opacity=75); opacity: .75; }
 .ui-loader-textonly { padding: 15px; margin-left: -115px; }
 .ui-loader-textonly .ui-icon { display: none; }
